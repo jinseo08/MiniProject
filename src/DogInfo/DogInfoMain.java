@@ -9,41 +9,39 @@ public class DogInfoMain {
 		Scanner scan = new Scanner(System.in);
 		boolean run = true;
 		int input = 0;
+		DogInfoService ds = new DogInfoService();
 		
 		while(run) {
-			System.out.println("1. 반려견 등록  2. 사료 기록  3. 물그릇위생 기록  4. 간식 기록  5. 산책 기록"
-					+ "  6. 오늘정보 조회  7. 건강정보 조회  8.종료");
-			System.out.println("선택");
+			System.out.println("-------------------------------------------------------------------");
+			System.out.println("  1. 반려견 등록  2. 사료 기록  3. 물그릇위생 기록  4. 간식 기록  5. 산책 기록");
+			System.out.println("  6. 건강정보 기록 7. 오늘정보 조회  8. 건강정보 조회  9.종료");
+			System.out.println("-------------------------------------------------------------------");		
+			System.out.print("선택>");
 			input = scan.nextInt();
 			if(input == 1) {
-				
-				System.out.println("1");
+				ds.save();
 			}else if (input == 2) {
-				
-				System.out.println("2");
+				ds.feedRecord();
 			}else if (input == 3) {
-				
-				System.out.println("3");
+				ds.waterRecord();
 			}else if (input == 4) {
-				
-				System.out.println("4");
+				ds.snackRecord();
 			}else if (input == 5) {
-				
-				System.out.println("5");
+				ds.walkRecord();
 			}else if (input == 6) {
-				
-				System.out.println("6");
+				//ds.health();
 			}else if (input == 7) {
-				
-				System.out.println("7");
+				ds.today();
 			}else if (input == 8) {
 				
-				System.out.println("8");
+
+
+			}else if (input == 9) {
+				System.out.println("반려견 관리 프로그램을 종료합니다.");
 				run = false;
 			}else {
 				System.out.println("번호를 확인해주세요");
 			}
-			
 		}
 	}
 }

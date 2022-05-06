@@ -2,17 +2,17 @@ package DogInfo;
 
 public class RecordDTO {
 	
-	Long recordId; //관리번호
-	String dogName; //강아지이름
-	String feed; //사료
-	String water; //물그릇 세척
-	String snack; //간식
-	String walk; //산책
-	String nexgard; //심장사상충 예방약
-	String anthl; //구충제
-	String healthCheckup; //건강검진
-	String vaccine; //예방접종
-	String date; //날짜 및 시간입력
+	private Long recordId; //관리번호
+	private String dogName; //강아지이름
+	private String feed; //사료
+	private String water; //물그릇 세척
+	private String snack; //간식
+	private String walk; //산책
+	private String nexgard; //심장사상충 예방약
+	private String anthl; //구충제
+	private String healthCheckup; //건강검진
+	private String vaccine; //예방접종
+	private String date; //날짜 및 시간입력
 	int count; // 횟수
 	
 	RecordDTO(){

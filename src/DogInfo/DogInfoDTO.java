@@ -2,10 +2,10 @@ package DogInfo;
 
 public class DogInfoDTO {
 
-	Long dogId; //관리번호
-	String dogName; //이름
-	String gender; //성별
-	String dateBirth; //생년월일
+	private Long dogId; //관리번호
+	private String dogName; //이름
+	private String gender; //성별
+	private String dateBirth; //생년월일
 
 	DogInfoDTO(){
 		
