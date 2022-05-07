@@ -41,7 +41,6 @@ public class DogInfoRepository {
 		recordList.add(walk);
 	}
 	
-	
 	// 오늘기록
 	public List<RecordDTO> today() {
 		return recordList;
