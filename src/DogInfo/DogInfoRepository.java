@@ -42,20 +42,18 @@ public class DogInfoRepository {
 	}
 	
 	
-	
-	//사료기록만 출력 테스트
-	public List<RecordDTO> todayTest() {
-		for(int i = 0; i < recordList.size(); i++) {
-			recordList.get(i).getFeed();
-		}
-		return recordList;
-	}
-	
 	// 오늘기록
 	public List<RecordDTO> today() {
 		return recordList;
 	}
+
+	public void healthSave(RecordDTO health) {
+		recordList.add(health);
+	}
 	
+	public List<RecordDTO> health() {
+		return recordList;
+	}
 	
 	
 

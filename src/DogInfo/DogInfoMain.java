@@ -29,11 +29,11 @@ public class DogInfoMain {
 			}else if (input == 5) {
 				ds.walkRecord();
 			}else if (input == 6) {
-				//ds.health();
+				ds.healthSave();
 			}else if (input == 7) {
 				ds.today();
 			}else if (input == 8) {
-				
+				ds.health();
 
 
 			}else if (input == 9) {

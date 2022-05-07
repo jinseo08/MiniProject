@@ -12,15 +12,14 @@ public class RecordDTO {
 	private String anthl; //구충제
 	private String healthCheckup; //건강검진
 	private String vaccine; //예방접종
-	private String date; //날짜 및 시간입력
-	int count; // 횟수
+	
 	
 	RecordDTO(){
 		
 	}
 
 	public RecordDTO(Long recordId, String dogName, String feed, String water, String snack, String walk,
-			String nexgard, String anthl, String healthCheckup, String vaccine, String date, int count) {
+			String nexgard, String anthl, String healthCheckup, String vaccine, String date) {
 		super();
 		this.recordId = recordId;
 		this.dogName = dogName;
@@ -32,8 +31,6 @@ public class RecordDTO {
 		this.anthl = anthl;
 		this.healthCheckup = healthCheckup;
 		this.vaccine = vaccine;
-		this.date = date;
-		this.count = count;
 	}
 
 	public Long getRecordId() {
@@ -116,28 +113,13 @@ public class RecordDTO {
 		this.vaccine = vaccine;
 	}
 
-	public String getDate() {
-		return date;
-	}
 
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
-	}
 
 	@Override
 	public String toString() {
 		return "RecordDTO [recordId=" + recordId + ", dogName=" + dogName + ", feed=" + feed + ", water=" + water
 				+ ", snack=" + snack + ", walk=" + walk + ", nexgard=" + nexgard + ", anthl=" + anthl
-				+ ", healthCheckup=" + healthCheckup + ", vaccine=" + vaccine + ", date=" + date + ", count=" + count
-				+ "]";
+				+ ", healthCheckup=" + healthCheckup + ", vaccine=" + vaccine + "]";
 	}
 	
 	
