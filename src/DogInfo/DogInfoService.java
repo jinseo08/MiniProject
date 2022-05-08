@@ -26,8 +26,10 @@ public class DogInfoService {
 		boolean dogCheck = dr.checkName(dogName);
 		if (dogCheck) {
 			RecordDTO feed = new RecordDTO();
-			System.out.print("사료 먹은 시간을 입력해주세요 : ");
+			System.out.print("기록 할 날짜를 입력해주세요 : ");
+			feed.setDate(scan.nextLine());
 			scan.nextLine();
+			System.out.print("사료 먹은 시간을 입력해주세요 : ");
 			feed.setFeed(scan.nextLine());
 			dr.feedRecord(feed);
 		} else {
@@ -41,8 +43,10 @@ public class DogInfoService {
 		boolean dogCheck = dr.checkName(dogName);
 		if (dogCheck) {
 			RecordDTO water = new RecordDTO();
-			System.out.print("물그릇 갈아준 시간을 입력해주세요 : ");
+			System.out.print("기록 할 날짜를 입력해주세요 : ");
+			water.setDate(scan.nextLine());
 			scan.nextLine();
+			System.out.print("물그릇 갈아준 시간을 입력해주세요 : ");
 			water.setWater(scan.nextLine());
 			dr.waterRecord(water);
 		} else {
@@ -56,8 +60,10 @@ public class DogInfoService {
 		boolean dogCheck = dr.checkName(dogName);
 		if (dogCheck) {
 			RecordDTO snack = new RecordDTO();
-			System.out.print("간식 준 시간을 입력해주세요 : ");
+			System.out.print("기록 할 날짜를 입력해주세요 : ");
+			snack.setDate(scan.nextLine());
 			scan.nextLine();
+			System.out.print("간식 준 시간을 입력해주세요 : ");
 			snack.setSnack(scan.nextLine());
 			dr.snackRecord(snack);
 		} else {
@@ -71,8 +77,10 @@ public class DogInfoService {
 		boolean dogCheck = dr.checkName(dogName);
 		if (dogCheck) {
 			RecordDTO walk = new RecordDTO();
-			System.out.print("산책 갔다 온 시간을 입력해주세요 : ");
+			System.out.print("기록 할 날짜를 입력해주세요 : ");
+			walk.setDate(scan.nextLine());
 			scan.nextLine();
+			System.out.print("산책 갔다 온 시간을 입력해주세요 : ");
 			walk.setWalk(scan.nextLine());
 			dr.walkRecord(walk);
 		} else {
@@ -105,26 +113,33 @@ public class DogInfoService {
 		String dogName = scan.next();
 		boolean dogCheck = dr.checkName(dogName);
 		if (dogCheck) {
-			List<RecordDTO> todayList = dr.today();
-			for (int i = 0; i < todayList.size(); i++) {
-				if (todayList.get(i).getFeed() != null) {
-					System.out.println("사료기록" + todayList.get(i).getFeed());
+			System.out.print("조회 할 날짜 : ");
+			String date = scan.next();
+			boolean dateCheck = dr.checkDate(date);
+			if(dateCheck) {
+				List<RecordDTO> todayList = dr.today();
+				for (int i = 0; i < todayList.size(); i++) {
+					if (todayList.get(i).getFeed() != null) {
+						System.out.println("사료기록" + todayList.get(i).getFeed());
+					}
 				}
-			}
-			for (int i = 0; i < todayList.size(); i++) {
-				if (todayList.get(i).getWater() != null) {
-					System.out.println("물기록" + todayList.get(i).getWater());
+				for (int i = 0; i < todayList.size(); i++) {
+					if (todayList.get(i).getWater() != null) {
+						System.out.println("물기록" + todayList.get(i).getWater());
+					}
 				}
-			}
-			for (int i = 0; i < todayList.size(); i++) {
-				if (todayList.get(i).getSnack() != null) {
-					System.out.println("간식기록" + todayList.get(i).getSnack());
+				for (int i = 0; i < todayList.size(); i++) {
+					if (todayList.get(i).getSnack() != null) {
+						System.out.println("간식기록" + todayList.get(i).getSnack());
+					}
 				}
-			}
-			for (int i = 0; i < todayList.size(); i++) {
-				if (todayList.get(i).getWalk() != null) {
-					System.out.println("산책기록" + todayList.get(i).getWalk());
+				for (int i = 0; i < todayList.size(); i++) {
+					if (todayList.get(i).getWalk() != null) {
+						System.out.println("산책기록" + todayList.get(i).getWalk());
+					}
 				}
+			}else {
+				System.out.println("조회 할 날짜가 없습니다!");
 			}
 		} else {
 			System.out.println("일치하는 반려견이 없습니다!");

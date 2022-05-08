@@ -12,7 +12,7 @@ public class DogInfoRepository {
 	}
 
 	// 반려견 이름 체크
-	public Boolean checkName(String dogName) {
+	public boolean checkName(String dogName) {
 		boolean dogCheck = false;
 		for(int i = 0; i < dogList.size(); i++) {
 			if(dogName.equals(dogList.get(i).getDogName())){
@@ -22,6 +22,18 @@ public class DogInfoRepository {
 		return dogCheck;
 	}
 
+	//조회 날짜 체크
+	public boolean checkDate(String date) {
+		boolean dateCheck = false;
+		for(int i = 0; i < recordList.size(); i++) {
+			if(date.equals(recordList.get(i).getDate())){
+				dateCheck = true;
+			}
+		}
+		return dateCheck;		
+	}
+	
+	
 	public void feedRecord(RecordDTO feed) {
 		recordList.add(feed);
 	}
@@ -53,6 +65,8 @@ public class DogInfoRepository {
 	public List<RecordDTO> health() {
 		return recordList;
 	}
+
+	
 	
 	
 
