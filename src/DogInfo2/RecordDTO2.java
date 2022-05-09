@@ -1,7 +1,7 @@
-package DogInfo;
+package DogInfo2;
 
-public class RecordDTO {
-	
+public class RecordDTO2 {
+
 	private Long recordId; //관리번호
 	private String dogName; //강아지이름
 	private String feed; //사료
@@ -13,14 +13,15 @@ public class RecordDTO {
 	private String healthCheckup; //건강검진
 	private String vaccine; //예방접종
 	private String date; //날짜입력
-	private String nextDate; //다음예정일
 	
-	RecordDTO(){
+	
+	RecordDTO2(){
 		
 	}
 
-	public RecordDTO(Long recordId, String dogName, String feed, String water, String snack, String walk,
-			String nexgard, String anthl, String healthCheckup, String vaccine, String date, String nextDate) {
+
+	public RecordDTO2(Long recordId, String dogName, String feed, String water, String snack, String walk,
+			String nexgard, String anthl, String healthCheckup, String vaccine, String date) {
 		super();
 		this.recordId = recordId;
 		this.dogName = dogName;
@@ -33,113 +34,125 @@ public class RecordDTO {
 		this.healthCheckup = healthCheckup;
 		this.vaccine = vaccine;
 		this.date = date;
-		this.nextDate = nextDate;
 	}
+
 
 	public Long getRecordId() {
 		return recordId;
 	}
 
+
 	public void setRecordId(Long recordId) {
 		this.recordId = recordId;
 	}
+
 
 	public String getDogName() {
 		return dogName;
 	}
 
+
 	public void setDogName(String dogName) {
 		this.dogName = dogName;
 	}
+
 
 	public String getFeed() {
 		return feed;
 	}
 
+
 	public void setFeed(String feed) {
 		this.feed = feed;
 	}
+
 
 	public String getWater() {
 		return water;
 	}
 
+
 	public void setWater(String water) {
 		this.water = water;
 	}
+
 
 	public String getSnack() {
 		return snack;
 	}
 
+
 	public void setSnack(String snack) {
 		this.snack = snack;
 	}
+
 
 	public String getWalk() {
 		return walk;
 	}
 
+
 	public void setWalk(String walk) {
 		this.walk = walk;
 	}
+
 
 	public String getNexgard() {
 		return nexgard;
 	}
 
+
 	public void setNexgard(String nexgard) {
 		this.nexgard = nexgard;
 	}
+
 
 	public String getAnthl() {
 		return anthl;
 	}
 
+
 	public void setAnthl(String anthl) {
 		this.anthl = anthl;
 	}
+
 
 	public String getHealthCheckup() {
 		return healthCheckup;
 	}
 
+
 	public void setHealthCheckup(String healthCheckup) {
 		this.healthCheckup = healthCheckup;
 	}
+
 
 	public String getVaccine() {
 		return vaccine;
 	}
 
+
 	public void setVaccine(String vaccine) {
 		this.vaccine = vaccine;
 	}
+
 
 	public String getDate() {
 		return date;
 	}
 
+
 	public void setDate(String date) {
 		this.date = date;
 	}
 
-	public String getNextDate() {
-		return nextDate;
-	}
-
-	public void setNextDate(String nextDate) {
-		this.nextDate = nextDate;
-	}
 
 	@Override
 	public String toString() {
-		return "RecordDTO [recordId=" + recordId + ", dogName=" + dogName + ", feed=" + feed + ", water=" + water
+		return "RecordDTO2 [recordId=" + recordId + ", dogName=" + dogName + ", feed=" + feed + ", water=" + water
 				+ ", snack=" + snack + ", walk=" + walk + ", nexgard=" + nexgard + ", anthl=" + anthl
-				+ ", healthCheckup=" + healthCheckup + ", vaccine=" + vaccine + ", date=" + date + ", nextDate="
-				+ nextDate + "]";
+				+ ", healthCheckup=" + healthCheckup + ", vaccine=" + vaccine + ", date=" + date + "]";
 	}
-
 	
 	
 	

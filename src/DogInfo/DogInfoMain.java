@@ -10,6 +10,7 @@ public class DogInfoMain {
 		boolean run = true;
 		int input = 0;
 		DogInfoService ds = new DogInfoService();
+		System.out.println("       안녕하세요! 반려견 관리 프로그램입니다! 원하는 항목을 선택 해 주세요!        ");
 		
 		while(run) {
 			System.out.println("-------------------------------------------------------------------");

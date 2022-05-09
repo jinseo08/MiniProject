@@ -17,7 +17,6 @@ public class DogInfoService {
 		String dateBirth = scan.next();
 		DogInfoDTO member = new DogInfoDTO(++dogId, dogname, gender, dateBirth);
 		dr.save(member);
-		System.out.println(member);
 	}
 
 	public void feedRecord() {
@@ -27,10 +26,9 @@ public class DogInfoService {
 		if (dogCheck) {
 			RecordDTO feed = new RecordDTO();
 			System.out.print("기록 할 날짜를 입력해주세요 : ");
-			feed.setDate(scan.nextLine());
-			scan.nextLine();
+			feed.setDate(scan.next());
 			System.out.print("사료 먹은 시간을 입력해주세요 : ");
-			feed.setFeed(scan.nextLine());
+			feed.setFeed(scan.next());
 			dr.feedRecord(feed);
 		} else {
 			System.out.println("일치하는 반려견이 없습니다!");
@@ -44,10 +42,9 @@ public class DogInfoService {
 		if (dogCheck) {
 			RecordDTO water = new RecordDTO();
 			System.out.print("기록 할 날짜를 입력해주세요 : ");
-			water.setDate(scan.nextLine());
-			scan.nextLine();
+			water.setDate(scan.next());
 			System.out.print("물그릇 갈아준 시간을 입력해주세요 : ");
-			water.setWater(scan.nextLine());
+			water.setWater(scan.next());
 			dr.waterRecord(water);
 		} else {
 			System.out.println("일치하는 반려견이 없습니다!");
@@ -61,10 +58,9 @@ public class DogInfoService {
 		if (dogCheck) {
 			RecordDTO snack = new RecordDTO();
 			System.out.print("기록 할 날짜를 입력해주세요 : ");
-			snack.setDate(scan.nextLine());
-			scan.nextLine();
+			snack.setDate(scan.next());
 			System.out.print("간식 준 시간을 입력해주세요 : ");
-			snack.setSnack(scan.nextLine());
+			snack.setSnack(scan.next());
 			dr.snackRecord(snack);
 		} else {
 			System.out.println("일치하는 반려견이 없습니다!");
@@ -78,10 +74,9 @@ public class DogInfoService {
 		if (dogCheck) {
 			RecordDTO walk = new RecordDTO();
 			System.out.print("기록 할 날짜를 입력해주세요 : ");
-			walk.setDate(scan.nextLine());
-			scan.nextLine();
+			walk.setDate(scan.next());
 			System.out.print("산책 갔다 온 시간을 입력해주세요 : ");
-			walk.setWalk(scan.nextLine());
+			walk.setWalk(scan.next());
 			dr.walkRecord(walk);
 		} else {
 			System.out.println("일치하는 반려견이 없습니다!");
@@ -120,22 +115,22 @@ public class DogInfoService {
 				List<RecordDTO> todayList = dr.today();
 				for (int i = 0; i < todayList.size(); i++) {
 					if (todayList.get(i).getFeed() != null) {
-						System.out.println("사료기록" + todayList.get(i).getFeed());
+						System.out.println("사료 먹은 시간 " + todayList.get(i).getFeed());
 					}
 				}
 				for (int i = 0; i < todayList.size(); i++) {
 					if (todayList.get(i).getWater() != null) {
-						System.out.println("물기록" + todayList.get(i).getWater());
+						System.out.println("물그릇 갈아준 시간 " + todayList.get(i).getWater());
 					}
 				}
 				for (int i = 0; i < todayList.size(); i++) {
 					if (todayList.get(i).getSnack() != null) {
-						System.out.println("간식기록" + todayList.get(i).getSnack());
+						System.out.println("간식 준 시간 " + todayList.get(i).getSnack());
 					}
 				}
 				for (int i = 0; i < todayList.size(); i++) {
 					if (todayList.get(i).getWalk() != null) {
-						System.out.println("산책기록" + todayList.get(i).getWalk());
+						System.out.println("산책갔다 온 시간 " + todayList.get(i).getWalk());
 					}
 				}
 			}else {
@@ -163,8 +158,8 @@ public class DogInfoService {
 				}
 			}
 			for (int i = 0; i < healthList.size(); i++) {
-				if (healthList.get(i).getSnack() != null) {
-					System.out.println("예방접종" + healthList.get(i).getSnack());
+				if (healthList.get(i).getVaccine() != null) {
+					System.out.println("예방접종" + healthList.get(i).getVaccine());
 				}
 			}
 			for (int i = 0; i < healthList.size(); i++) {
@@ -176,5 +171,6 @@ public class DogInfoService {
 			System.out.println("일치하는 반려견이 없습니다!");
 		}
 	}
+	
 
 }
